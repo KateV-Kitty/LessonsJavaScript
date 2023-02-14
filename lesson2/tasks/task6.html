@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Задача 6</h1>
+    <p>
+        З клавіатури вводяться вартість товару та кількість одиниць 3 товарів. Обчислити вартість кожного товару
+        окремо та загальну вартість. Вивести чек (як у супермаркеті) використовуючи елементи розмітки.<br>
+    </p>
+    <script>
+
+        //Вводим необходимые данные
+        let quantityKiwi = parseInt(prompt('количество киви', '0'))
+        let kiwiPrice = parseFloat(prompt('стоимость 1 киви', '0'))
+        let quantityOrange = parseInt(prompt('количество апельсин', '0'))
+        let OrangePrice = parseFloat(prompt('стоимость 1 апельсина', '0'))
+        let quantityWatermelon = parseInt(prompt('количество арбузов', '0'))
+        let watermelonPrice = parseFloat(prompt('стоимость 1 арбуза', '0'))
+        //Вычисляем результат
+        let sumKiwi = quantityKiwi * kiwiPrice
+        let sumOrange = quantityOrange * OrangePrice
+        let sumWatermelon = quantityWatermelon * watermelonPrice
+        let totalSum = sumKiwi + sumOrange + sumWatermelon
+        //Выводим результат
+        document.write(`
+            <table border="1px">
+                <tr>
+                    <th>Количество киви</th>
+                    <td>${quantityKiwi}</td>
+                </tr>
+                <tr>
+                    <th>Стоимость киви</th>
+                    <td>${sumKiwi}</td>
+                </tr>
+                <tr>
+                    <th>Количество апельсин</th>
+                    <td>${quantityOrange}</td>
+                </tr>
+                <tr>
+                    <th>Стоимость апельсин</th>
+                    <td>${sumOrange}</td>
+                </tr>
+                <tr>
+                    <th>Количество арбузов</th>
+                    <td>${quantityWatermelon}</td>
+                </tr>
+                <tr>
+                    <th>Стоимость арбузов</th>
+                    <td>${sumWatermelon}</td>
+                </tr>
+                <tr>
+                    <th>Итоговая сумма</th>
+                    <td>${totalSum}</td>
+                </tr>
+            </table>
+        `)
+
+    </script>
+</body>
+
+</html>
