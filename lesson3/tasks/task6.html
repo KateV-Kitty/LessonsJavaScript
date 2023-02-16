@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Задача 6</h1>
+    <p>
+        З клавіатури вводиться номер дня тижня. Вивести на екран назву дня.<br>
+    </p>
+    <script>
+
+        //Вводим необходимые данные
+        let weekNumber = parseInt(prompt('Введите номер дня недели от 1 до 7', '1'))
+        const monday = 1
+        const tuesday = 2
+        const wednesday = 3
+        const thursday = 4
+        const friday = 5
+        const saturday = 6
+        const sunday = 7
+        //Вычисляем результат
+        if (weekNumber === monday)
+            document.write('Понедельник')
+        else if (weekNumber === tuesday)
+            document.write('Вторник')
+        else if (weekNumber === wednesday)
+            document.write('Среда')
+        else if (weekNumber === thursday)
+            document.write('Четверг')
+        else if (weekNumber === friday)
+            document.write('Пятница')
+        else if (weekNumber === saturday)
+            document.write('Суббота')
+        else if (weekNumber === sunday)
+            document.write('Воскресенье')
+        else
+            document.write('Не верный номер дня недели')
+        //Выводим результат
+
+
+    </script>
+</body>
+
+</html>
