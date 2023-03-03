@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Задача 12</h1>
+    <p>
+        Ігровий автомат. Випадково вибираємо зображення у 3 позиціях. 
+        Вибір у кожній позиції вибирається як одне з чотирьох зображень. 
+        Вивести ці зображення і повідомити виграш користувача 
+        (три перших зображення 100 грн, три других – 200, три третіх – 500, 
+        три четвертих зображення – 1000грн). Використати цикли і switch 
+        (для вибору зображення за номером). <br>
+    </p>
+   
+    <script>
+        //Вводим необходимые данные
+        let maxRandomImage = 3
+
+        let prize
+        let firstImage, secondImage, thirdImage 
+        //Вычисляем результат
+        //Выводим результат
+
+        for (let i = 1; i <4; i++){
+            const randomImage = 1 + Math.floor(Math.random()* 4)
+            let selectedImage
+
+            switch (randomImage) {
+            case 1: selectedImage = `<img src="../img/kiwi.png" style="max-width: 100px; border: 1px solid black; margin:5px;">`
+                break;
+            case 2: selectedImage = `<img src="../img/mango.png" style="max-width: 100px; border: 1px solid black; margin:5px">`
+                break;
+            case 3: selectedImage = `<img src="../img/pineapple.png" style="max-width: 100px; border: 1px solid black; margin:5px">`
+                break;
+            case 4: selectedImage = `<img src="../img/watermelon.png" style="max-width: 100px; border: 1px solid black; margin:5px">`
+                break;
+            }
+
+            if (i === 1)
+            firstImage = randomImage
+            else if (i === 2)
+            secondImage = randomImage
+            else 
+            thirdImage = randomImage
+
+            document.write(`${selectedImage}`) 
+        }
+        
+
+
+        let allImageEqual = firstImage === secondImage && secondImage === thirdImage
+        
+        if (allImageEqual){
+            switch (firstImage) {
+                case 1: 
+                prize = 'Выигрыш 100гр'
+                    break;
+                case 2: 
+                prize = 'Выигрыш 200гр'
+                    break;
+                case 3: 
+                prize = 'Выигрыш 500гр'
+                    break;
+                case 4: 
+                prize = 'Выигрыш 1000гр'
+                    break;
+            }
+        }    else prize = 'Проиграли, попробуйте еще раз'
+
+        document.write(`<br> ${prize}`)
+        
+        
+        
+
+
+
+    </script>
+</body>
+
+</html>

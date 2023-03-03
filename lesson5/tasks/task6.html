@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Задача 6</h1>
+    <p>
+        Вивести 3 таблиці (по 3 рядки і 3 стовпці у кожній) за зразком<br>
+    </p>
+    <script>
+        //Вводим необходимые данные
+        //Вычисляем результат
+        //Выводим результат
+    
+        let numbers = 1
+        
+        for(let columns = 1; columns <=3; columns++){
+            
+            for(let row = 1; row <= 3; row++){
+            document.write(`<table border = "1px"`)
+            document.write(`<tr>`)  
+                  
+                for(let str = 1; str <= 3; str++){
+                    document.write(`<td>${numbers}</td>`) 
+                    numbers++   
+                                
+                }
+                
+            }   
+                
+        }   
+        //document.write(`<div display: inline-block>`) что-то я не могу понять куда это писать )))
+            document.write(`</tr>`)
+            document.write(`</table>`)
+
+
+    </script>
+</body>
+
+</html>

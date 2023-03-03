@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Задача 13</h1>
+    <p>
+        Морський бій. Комп’ютер випадково 
+        розташовує одиночний корабель на полі 
+        розміром N*M. Маючи К снарядів користувач
+         намагається потопити корабель.   <br>
+    </p>
+   
+    <script>
+        //Вводим необходимые данные
+        let N = parseInt(prompt('Введите розмир поля N')) //3
+        let M = parseInt(prompt('Введите розмир поля M')) //3
+        let sum = 0
+        //Вычисляем результат
+        //Выводим результат
+        for (let i = 0; i < N; i++){
+            for (let j = 0; j < M; j++){
+                let positionN = 1 + Math.floor(Math.random() * N)
+                let positionM = 1 + Math.floor(Math.random() * M)
+
+                let coordinateN = parseInt(prompt('Введите координату выстрела N'))
+                let coordinateM = parseInt(prompt('Введите координату выстрела M'))
+                sum++
+                if(coordinateN === positionN && coordinateM === positionM)
+                {alert ('Победили!!!')}
+                else 
+                {alert ('Проиграли, попробуйте еще раз.')}
+            }
+        }
+        document.write(`${coordinate}`)
+        
+    </script>
+</body>
+
+</html>

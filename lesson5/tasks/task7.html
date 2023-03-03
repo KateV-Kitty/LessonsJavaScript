@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Задача 7</h1>
+    <p>
+        Вивести на екран N абзаців (N вводиться користувачем) за зразком:<br>
+    </p>
+    <!-- <h1>Заголовок 1</h1>
+    <p>Раздел 1, параграф 1</p>
+    <hr>
+    <h1>Заголовок 2</h1>
+    <p>Раздел 2, параграф 1</p>
+    <p>Раздел 2, параграф 2</p>
+    <hr>
+    <h1>Заголовок 3</h1>
+    <p>Раздел 3, параграф 1</p>
+    <p>Раздел 3, параграф 2</p>
+    <p>Раздел 3, параграф 3</p>
+    <hr>
+    <h1>Заголовок 4</h1>
+    <p>Раздел 4, параграф 1</p>
+    <p>Раздел 4, параграф 2</p>
+    <p>Раздел 4, параграф 3</p>
+    <p>Раздел 4, параграф 4</p>
+    <hr> -->
+    <script>
+        //Вводим необходимые данные
+        let paragraphNumber = parseInt(prompt('Введите номер абзаца'))
+        
+        //Вычисляем результат
+        //Выводим результат
+        for(let t = 1; t <= paragraphNumber; t++){
+            document.write(`Заголовок ${t} <br>`)
+            let p = 1
+            for(let s = 1; s <= t; s++){
+                document.write(`Раздел ${t}, Параграф ${p++} <br>`)
+                document.write(`<br>`)
+            }
+        }
+
+    </script>
+</body>
+
+</html>

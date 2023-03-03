@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Задача 14</h1>
+    <p>
+        Каса. Користувачу повідомляють суму, яку йому треба сплатити. 
+        Користувач поступово вводить суму грошей до тих пір, 
+        поки суми не буде достатньо для оплати товарів 
+        (кожного разу користувачу повідомляють, яку ще суму потрібно ввести).  <br>
+    </p>
+   
+    <script>
+        //Вводим необходимые данные
+        const paymentAmount = parseInt(prompt('Введите сумму оплаты', '50'))
+        let totalAmountDeposit = 0
+        let paymentBalance 
+        //Вычисляем результат
+        //Выводим результат
+        do {
+            const madePayment = parseFloat(prompt('Вношу сумму', '10'))
+            totalAmountDeposit += madePayment
+            paymentBalance = paymentAmount - totalAmountDeposit
+
+            if (totalAmountDeposit < paymentAmount)
+            alert (`Остаток взноса ${paymentBalance}`)
+            else (totalAmountDeposit === paymentAmount)
+            
+        } while (totalAmountDeposit < paymentAmount)
+        document.write(`Спасибо за покупку`)
+        
+    </script>
+</body>
+
+</html>

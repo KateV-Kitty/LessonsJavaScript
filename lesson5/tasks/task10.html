@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Задача 10</h1>
+    <p>
+        Знайти суму всіх непарних чисел, що знаходяться між заданими користувачем числами. <br>
+    </p>
+   
+    <script>
+        //Вводим необходимые данные
+        let userStartNumb = parseInt(prompt('Укажите начальное число промежутка'))
+        let userFinishNumb = parseInt(prompt('Укажите конечное число промежутка'))
+        let sumOddNumbers = 0
+        let quantityOddNumbers = 0
+       
+        //Вычисляем результат
+        //Выводим результат
+
+        for (let i = userStartNumb; i <= userFinishNumb; i++ ){
+            if (i % 2 !== 0){
+            sumOddNumbers += i
+            quantityOddNumbers++
+            } 
+        }
+        document.write(`Сумма нечетных чисел в промежутке от ${userStartNumb} до ${userFinishNumb} ровна ${sumOddNumbers}`)
+    </script>
+</body>
+
+</html>

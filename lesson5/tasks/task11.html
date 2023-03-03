@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Задача 11</h1>
+    <p>
+        Знайти суму 5 непарних чисел, що знаходяться між заданими користувачем числами. <br>
+    </p>
+   
+    <script>
+        //Вводим необходимые данные
+        const userStartNumb = parseInt(prompt('Укажите начальное число'))
+        const userFinishNumb = parseInt(prompt('Укажите конечное число'))
+        let sumOddNumbers = 0
+        let quantityOddNumbers = 0
+       
+        //Вычисляем результат
+        //Выводим результат
+
+        for (let i = userStartNumb; i <= 15 && quantityOddNumbers < 5; i++ ){
+            if (i % 2 !== 0){
+            sumOddNumbers += i
+            quantityOddNumbers++
+            }
+            
+        }
+        document.write(`Сумма ${userStartNumb} и ${userFinishNumb} ровна ${sumOddNumbers}`)
+
+
+    </script>
+</body>
+
+</html>

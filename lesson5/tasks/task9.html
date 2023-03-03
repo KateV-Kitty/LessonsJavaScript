@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Задача 9</h1>
+    <p>
+        Користувач загадує число. Комп’ютер задає питання поки не вгадає число користувача (використати confirm).<br>
+    </p>
+   
+    <script>
+        //Вводим необходимые данные
+        let userNumber = parseInt(prompt('Загадайте число от 1 до 100'))
+        const minNumber = 1
+        const maxNumber = 100
+       
+        //Вычисляем результат
+        //Выводим результат
+        let result 
+        for(let i = 1; i <= 100; i++){
+            const compNumber = Math.floor(minNumber + Math.random() * (maxNumber - minNumber +1) )
+            let takeNumber = confirm(`Загаданное число ${compNumber} ?`)
+            
+            if (userNumber === compNumber){
+                result = 'Угадали'
+                break
+            }
+            else 
+                document.write()
+        }
+
+        document.write(result)
+
+        
+    
+
+
+
+    </script>
+</body>
+
+</html>
