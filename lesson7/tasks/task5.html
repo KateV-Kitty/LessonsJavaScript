@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Задача 5</h1>
+    <p>
+        Створити окремі функції, які переводять:
+                <ol>
+                    <li>Сантиметри у дюйми;</li>
+                    <li>Кілограми у фунти;</li>
+                    <li>Кілометри у милі.</li>
+                </ol><br>
+    </p>
+    <script>
+        //Описание функции
+        function getInch (num1) {
+           const inOneCentimetre = 0.39
+           return (num1 * inOneCentimetre)
+       }
+       //Использование и вычисление
+       const num1 = parseFloat (prompt('Введите число сантиметров', '0'))
+
+       const msg = getInch (num1)
+       document.write(`В ${num1} сантиметрах ${msg} дюймов <br>`)
+
+//---------------------------------------------------------------------------
+        
+        //Описание функции
+        function getPounds (num2) {
+           const inOneKilogram = 2.20
+           return (num2 * inOneKilogram)
+       }
+       //Использование и вычисление
+       const num2 = parseFloat (prompt('Введите число килограмм', '0'))
+
+       const mesg = getPounds (num2)
+       document.write(`В ${num2} килограммах ${mesg} фунтов <br>`)
+
+//---------------------------------------------------------------------------
+
+        //Описание функции
+        function getMiles (num3) {
+           const inOneKilometer = 0.62
+           return (num3 * inOneKilometer)
+       }
+       //Использование и вычисление
+       const num3 = parseFloat (prompt('Введите число километров', '0'))
+
+       const meseg = getMiles (num3)
+       document.write(`В ${num3} километре ${meseg} миль <br>`)
+
+    </script>
+</body>
+
+</html>

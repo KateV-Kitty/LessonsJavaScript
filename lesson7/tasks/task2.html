@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Задача 2</h1>
+    <p>
+        Створити функцію, яка за номером дня дозволяє з’ясувати 
+        чи є цей день робочим.<br>
+    </p>
+    <script>
+        //Описание функции
+        function showWorkingDay (days) {
+            switch (days) {
+                case 1: 
+                case 2: 
+                case 3: 
+                case 4: 
+                case 5: return  'Рабочий день'
+                case 6: 
+                case 7: return  'Выходной'
+
+                default: return  'Error'
+                
+            }
+            return (days)
+        }
+        //Использование и вычисление
+        const days = parseInt (prompt('Введите номер дня от 1 до 7'))
+        const msg = showWorkingDay(days)
+        document.write(msg)
+    </script>
+</body>
+
+</html>

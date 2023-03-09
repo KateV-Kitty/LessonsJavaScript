@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Задача 4</h1>
+    <p>
+        Створити функцію, яка для 3 заданих чисел знаходить одночасно 
+        декілька результатів: кількість парних, кількість додатних, 
+        кількість більших за 100.<br>
+    </p>
+    <script>
+       //Описание функции
+       function getResultEvenPositiveMore_100Num (e, p, m) {
+        let even = 0
+        let positive = 0
+        let more_100 = 0
+            if (e % 2 === 0) even++
+            if (p % 2 === 0) even++
+            if (m % 2 === 0) even++
+
+            if (e > 0) positive++
+            if (p > 0) positive++
+            if (m > 0) positive++
+
+            if (e > 100) more_100++
+            if (p > 100) more_100++
+            if (m > 100) more_100++
+        
+           return `
+            Количество парных чисел - ${even} <br> 
+            Количество четных чисел - ${positive} <br> 
+            Kоличество чисел больше 100 - ${more_100++}
+           `
+       }
+       //Использование и вычисление
+
+
+       const userNumOne = parseFloat (prompt('Введите первое число', '0'))
+       const userNumTwo = parseFloat (prompt('Введите второе число', '0'))
+       const userNumThree = parseFloat (prompt('Введите четвертое число', '0'))
+       document.write(`Ваши числа - ${userNumOne}, ${userNumTwo}, ${userNumThree} <br>`)
+
+       const showNumbers = getResultEvenPositiveMore_100Num (userNumOne, userNumTwo, userNumThree)
+       document.write(`${showNumbers}`)
+
+
+    </script>
+</body>
+
+</html>

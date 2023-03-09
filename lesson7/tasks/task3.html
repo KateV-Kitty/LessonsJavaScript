@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Задача 3</h1>
+    <p>
+        Створити окремі функції, які для 4 чисел знаходять:
+                <ol>
+                    <li>суму;</li>
+                    <li>добуток;</li>
+                    <li>середнє арифметичне;</li>
+                    <li>мінімальне значення. </li>
+                </ol> <br>
+    </p>
+    <script>
+        //Описание функции
+        function getSum (a, b, c, d) {
+           
+            return a + b + c + d
+        }
+        //Использование и вычисление
+
+//--------------------------------------------------------------------------------
+        
+        //Описание функции
+         function getMultiply (a, b, c, d) {
+           
+           return a * b * c * d
+        }
+        //Использование и вычисление
+
+//--------------------------------------------------------------------------------        
+        
+        //Описание функции
+         function getAverageArithmetic (a, b, c, d) {
+           
+           return (a + b + c + d) / 4
+        }
+        //Использование и вычисление
+        
+
+//---------------------------------------------------------------------------------        
+        
+        //Описание функции
+         function getMinNumber (a, b, c, d) {
+           let min = a
+            if (min > b)
+                min = b
+            if (min > c)
+                min = c
+            if (min > d)
+                min = d
+           return (min)
+        }
+        //Использование и вычисление
+
+        const a = parseFloat (prompt('Введите первое число', '0'))
+        const b = parseFloat (prompt('Введите второе число', '0'))
+        const c = parseFloat (prompt('Введите третье число', '0'))
+        const d = parseFloat (prompt('Введите четвертое число', '0'))
+        document.write(`Введены числа <br> a= ${a} <br> b= ${b} <br> c= ${c} <br> d= ${d} <br>`)
+
+        const resultSum = getSum (a, b, c, d)
+        document.write(`Сумма четырех чисел ${resultSum} <br>`)
+
+        const resultMultiply = getMultiply (a, b, c, d)
+        document.write(`Произведение четырех чисел ${resultMultiply} <br>`)
+        
+        const resultAverageArithmetic = getAverageArithmetic (a, b, c, d)
+        document.write(`Средне арифметическое четырех чисел ${resultAverageArithmetic} <br>`)
+
+        const resultMinNumber = getMinNumber (a, b, c, d)
+        document.write(`Минимальное число из четырех чисел ${resultMinNumber} <br>`)
+    </script>
+</body>
+
+</html>

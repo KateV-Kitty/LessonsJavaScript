@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Задача 9</h1>
+    <p>
+        Дано покази температур (довільна кількість). 
+        Розробити функцію, яка дозволить підрахувати кількість 
+        від’ємних показів температури.<br>
+    </p>
+    <script>
+        
+        //Описание функции
+       function getNegativeTemperature (a) {
+            const minTemperature = -50
+            const maxTemperature = 50
+            let negativeTemp = 0
+        
+            for (let num = 1; num <= a; num++) {
+                const randonNum = minTemperature + Math.floor(Math.random() * (maxTemperature - minTemperature + 1))
+                if (randonNum < 0) negativeTemp++
+                document.write(`${num} показатель ${randonNum} <br>`)
+            }
+            return negativeTemp
+       }
+       //Использование и вычисление
+        const userNum = parseFloat(prompt('Введите количество показателей температуры'))
+        const negativeTemperature = getNegativeTemperature (userNum)
+        document.write(`Отрицательных значений ${negativeTemperature}`)
+
+    </script>
+</body>
+
+</html>
