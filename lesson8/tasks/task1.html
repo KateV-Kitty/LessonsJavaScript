@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Задача 1</h1>
+    <p>
+        Дано масив, який містить оцінки з К предметів. 
+        Знайти середній бал і з’ясувати до якої категорії він відноситься 
+        (відмінник, двійочник (має хоча би одну двійку), 
+        хорошист (оцінки добре і відмінно), 
+        трійочник(є хоча би одна трійка)).<br>
+    </p>
+    <script>
+        const quantitySubject = parseInt(prompt('Введите количество предметов'))
+        const arrayGrade = []
+        // заполняем массив
+        function gerGardeArray(quantitySubject) {
+            for (let garde = 0; garde < quantitySubject; garde++) {
+                let subjectGarde = parseInt(prompt(`Введите оценку за ${garde + 1} предмет`)
+          )
+          arrayGrade.push(subjectGarde)
+        }
+        return arrayGrade
+            
+        }
+        // находим средний бал
+        function getAverageGarde(arrayGrade) {
+            let sumGarde = 0
+            for (let garde = 0; garde < arrayGrade.length; garde++) {
+                sumGarde += arrayGrade[garde] 
+            }
+            return sumGarde / arrayGrade.length
+        }
+        // находим минимальную оценку и выясняем категорию
+        function getMinGardeAndCategory(arrayGrade){
+            let minGarde = arrayGrade[0]
+            for (let garde = 0; garde < arrayGrade.length; garde++) {
+                if(arrayGrade[garde] < minGarde)
+                minGarde = arrayGrade[garde]
+            }
+            switch (minGarde) {
+                case 2:
+                    return 'двоечник'
+                case 3:
+                    return 'троечник'
+                case 4:
+                case 5:
+                case 6:
+                case 7:
+                    return 'хорошист'
+                case 8:
+                case 9:
+                case 10:
+                    return 'отличник'
+            }
+        }
+
+        // выводим результат
+    
+        const gardeArr = gerGardeArray(quantitySubject)
+        const gardeAverage = getAverageGarde(arrayGrade)
+        const category = getMinGardeAndCategory(arrayGrade) 
+        document.write (`Средний бал ${gardeAverage} <br> Категория ученика ${category}`)
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Задача 6</h1>
+    <p>
+        Дано послідовність цін товарів та назв (у окремих масивах). 
+        Вивести на екран ті, які може собі дозволити користувач 
+        (кількість грошей задається).
+                    Приклад збереження даних
+                    let productsPrices [1000, 20, 30]
+                    let productsTitles [‘cheese’, ‘juice’, ‘bread’]<br>
+    </p>
+    <script>
+        // вводим массивы
+        const productsPrices = [10, 5, 3, 15, 35, 20]
+        const productsTitles = ['круассан', 'эклер', 'конфета', 'багет', 'торт', 'хлеб']
+        let quantityUserMoney = parseInt(prompt('Введите количество денег', '3'))
+        // -----------------------------------------------------------
+        function showProductsCanBuy(quantityUserMoney, productsPrices, productsTitles) {
+            let canBuy = []
+            for (let m = 0; m < productsTitles.length; m++) {
+                if(quantityUserMoney >= productsPrices[m])
+                    canBuy.push(productsTitles[m])
+            }
+            return canBuy
+        }
+    
+        //выводим результат
+        
+        // 
+        const quantityProductsCanBuy = showProductsCanBuy (quantityUserMoney, productsPrices, productsTitles)
+        document.write(`Вы можете купить ${quantityProductsCanBuy}<br>`)
+        
+        
+    </script>
+</body> 
+
+</html>

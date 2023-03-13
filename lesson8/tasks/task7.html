@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Задача 7</h1>
+    <p>
+        Дано послідовність платіжок протягом року. 
+        Знайти сумарну кількість грошей за:
+    </p>
+    <ol>
+        <li>
+        	за весь рік;
+        </li>
+        <li>
+            у першій половині року;
+        </li>
+        <li>
+            у другій половині року;
+        </li>
+        <li>
+            за літо;
+        </li>
+        <li>
+        	за ІІ квартал;
+        </li>
+        <li>
+            за парні місяці (з парними номерами);
+        </li>
+        <li>
+            за місяці, які є початковими у сезоні (весна, літо, осінь, зима).
+        </li>
+    </ol>
+    <script>
+        //Функция для введения массива
+
+        function getRandomArray(valueNumber) {
+            const arr = []
+            for (let i = 1; i <= valueNumber; i++) {
+                const userNumber = parseInt(prompt(`Введите платеж за ${i} месяц`))
+                arr.push(userNumber)
+            }
+            return arr
+        }
+        
+        
+
+        //Вводим элементы массива
+        const paymentList = getRandomArray(12)
+
+        // 1-5 ---Найти сумму за любой промежуток года-----------------------------------------
+        function getSumPayments(paymentList, startMonthIndex, endMonthIndex) {
+                let sum = 0
+            for (let month = startMonthIndex; month <= endMonthIndex; month++) {
+                sum += paymentList [month -1]
+            }       
+            return sum
+        }
+
+        // 6 ---Найти сумму за четные месяцы (2,4,6,8,10,12)--------------------------------------
+        function getSumPaymentsEvenMonth(paymentList) {
+                let sumEvenMonth = 0
+            for (let month = 0; month < paymentList.length; month++) {
+                if(month % 2 === 0)
+                sumEvenMonth += paymentList[month]
+            }       
+            return sumEvenMonth
+        }
+        
+        // 7 ---Найти сумму за начальные месяцы сезона(3,6,9,12)--------------------------------------
+        function getSumPaymentsStartMonthSeason(paymentList) {
+                let sumStartMonthSeason = 0
+            for (let month = 0; month <  paymentList.length; month++) {
+                if(month % 3 === 0)
+                sumStartMonthSeason += paymentList[month]
+            }       
+            return sumStartMonthSeason
+        }
+        
+        
+        //Находим результат 
+        // 1
+        const sumYear = getSumPayments(paymentList, 1, 12)
+        document.write(`Сума за весь рік ${sumYear} <br>`)
+        // 2
+        const sumFirstHalfYear = getSumPayments(paymentList, 1, 6)
+        document.write(`Сума у першій половині року ${sumFirstHalfYear}<br>`)
+        // 3
+        const sumSecondHalfYear = getSumPayments(paymentList, 7, 12)
+        document.write(`Сума у другій половині року ${sumSecondHalfYear}<br>`)
+        // 4
+        const sumSummer = getSumPayments(paymentList, 6, 8)
+        document.write(`Сума за літо ${sumSummer}<br>`)
+        // 5
+        const sumSecondQuarter = getSumPayments(paymentList, 6, 8)
+        document.write(`Сума за ІІ квартал ${sumSecondQuarter}<br>`)
+        // 6
+        const sumMonthEven = getSumPaymentsEvenMonth(paymentList)
+        document.write(`Сума за парні місяці (з парними номерами) ${sumMonthEven}<br>`)
+        // 7
+        const sumMonthStartSeason = getSumPaymentsStartMonthSeason(paymentList)
+        document.write(`Сума за місяці, які є початковими у сезоні (весна, літо, осінь, зима) ${sumMonthStartSeason}<br>`)
+
+    </script>
+</body>
+
+</html>

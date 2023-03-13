@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Задача 9</h1>
+    <p>
+        Морський бій. Користувач вводить кількість клітинок одновимірного масиву
+         та кількість одиночних кораблів. Комп’ютер довільно розміщує ці одиночні 
+         кораблі у масиві по один у клітинці (якщо у клітинці 0, то клітинка пуста, 
+         якщо 1 – то це означає, що там є корабель). Користувач вводить номер клітинки,
+          куди стріляє. Гра продовжується до тих пір, поки не будуть потоплені 
+          усі кораблі.
+    </p>
+
+    <script>
+//   Сформувати поле гри (одновимірний масив із розміщеними кораблями)
+        function getRandomNum(minValue, maxValue) {
+          return minValue + Math.floor(Math.random() * (maxValue - minValue + 1))
+        }
+
+        function getFreeCell(gameField) {
+          let shipIndex
+          const lastIndex = gameField.length - 1
+          do {
+            shipIndex = getRandomNum(0, lastIndex)
+          } while (gameField[shipIndex] === 1)
+          return shipIndex
+        }
+
+        function createGameField(cellsNumber, shipsNumber) {
+          const gameField = new Array(cellsNumber).fill(0) //gameField = [0,0,0,0,0]
+          for (let i = 0; i < shipsNumber; i++) {
+            let shipIndex = getFreeCell(gameField)
+            gameField[shipIndex] = 1
+          } //gameField = [0,1,0,1,1]
+          return gameField
+        }
+
+        //----- Гра корстувача
+        function game(gameField, shipsNumber) {
+          //             0 1 2 3 4
+          //gameField = [0,1,0,1,1], shipsNumber=3
+          do {
+
+            const userStrikePosition =
+              parseInt(prompt(`Куди стріляємо (1-${gameField.length})?`)) - 1
+
+            if (gameField[userStrikePosition] === 1) {
+              shipsNumber--
+              alert('Попали')
+              gameField[userStrikePosition] = 0
+            } else alert('Промазав!')
+          } while (shipsNumber > 0)
+        }
+
+        const gameField = createGameField(10,3)
+        game(gameField, 3)
+        
+    </script>
+</body>
+
+</html>
